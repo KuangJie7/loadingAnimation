@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: #a5ca00;
+            padding:0;
+            margin:0;
+        }
+
+        #container{
+            position: relative;
+        }
+
+        #small{
+            width:100px;
+            height:100px;
+            border:5px solid white;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            animation:bigger 1s ease-in-out,small 1s ease-in-out infinite 1s;
+        }
+
+        #middle{
+            width:200px;
+            height:200px;
+            border:5px solid white;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-top: -100px;
+            margin-left: -100px;
+            animation:bigger 1s ease-in-out,middle 1s ease-in-out infinite 1s reverse;
+        }
+
+        #outer{
+            width:300px;
+            height:300px;
+            border:5px solid white;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-top: -150px;
+            margin-left: -150px;
+            perspective: 500px;
+            animation:bigger 1s ease-in-out,outer 1s ease-in-out infinite 1s;
+        }
+
+        @keyframes bigger {
+            0% {transform:perspective(400px) rotateX(0) rotateY(0) scale(0,0); }
+            50% {transform:perspective(400px) rotateX(180deg) rotateY(0) scale(0.5,0.5);}
+            100% {transform:perspective(400px) rotateX(180deg) rotateY(180deg) scale(1,1);}
+        }
+
+        @keyframes outer {
+            0% {transform:perspective(400px) rotateX(0) rotateY(0) }
+            50% {transform:perspective(400px) rotateX(180deg) rotateY(0) ;}
+            100% {transform:perspective(400px) rotateX(180deg) rotateY(180deg) ;}
+        }
+
+        @keyframes middle {
+            0% {transform:perspective(400px) rotateX(0) rotateY(0) ;}
+            50% {transform:perspective(400px) rotateX(0deg) rotateY(-180deg) ;}
+            100% {transform:perspective(400px) rotateX(180deg) rotateY(-180deg);}
+        }
+
+        @keyframes small {
+            0% {transform:perspective(400px) rotateX(0) rotateY(0) ;}
+            50% {transform:perspective(400px) rotateX(180deg) rotateY(0) ;}
+            100% {transform:perspective(400px) rotateX(180deg) rotateY(180deg);}
+        }
+        </style>
+</head>
+<body>
+<div id="small"></div>
+<div id="middle"></div>
+<div id="outer">
+</div>
+</body>
+</html>

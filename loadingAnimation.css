@@ -1,0 +1,18 @@
+body{
+    padding:0;
+    margin:0;
+}
+
+#loadingBlock {
+    width:120px;
+    height:120px;
+    background: rgba(0,100,158,1);
+    margin:80px auto;
+    animation:rota 1.2s infinite ease-in-out;
+}
+
+@keyframes rota {
+  0% {transform:perspective(120px) rotateX(0) rotateY(0);}
+   50% {transform:perspective(120px)  rotateX(180deg) rotateY(0);background: rgba(0,100,158,1);}
+   100%  {transform:perspective(120px) rotateX(180deg) rotateY(180deg);background: rgba(0,100,158,1);}
+}
